@@ -11,7 +11,9 @@ pd.options.display.max_columns = 10
 
 PACKAGE_ROOT = pathlib.Path(regression_model.__file__).resolve().parent
 TRAINED_MODEL_DIR = PACKAGE_ROOT / "trained_models"
-DATASET_DIR = PACKAGE_ROOT / "datasets"
+DATASET_DIR = (
+    PACKAGE_ROOT / "datasets" / "house-prices-advanced-regression-techniques"
+)
 
 # data
 TESTING_DATA_FILE = "test.csv"
@@ -94,7 +96,9 @@ NUMERICAL_NA_NOT_ALLOWED = [
 ]
 
 CATEGORICAL_NA_NOT_ALLOWED = [
-    feature for feature in CATEGORICAL_VARS if feature not in CATEGORICAL_VARS_WITH_NA
+    feature
+    for feature in CATEGORICAL_VARS
+    if feature not in CATEGORICAL_VARS_WITH_NA
 ]
 
 
